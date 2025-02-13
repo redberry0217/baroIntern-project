@@ -1,5 +1,5 @@
 import { baseInstance } from "../axios/baseInstance";
-import { LoginRequest, RegisterRequest } from "../types";
+import { EditProfileRequest, LoginRequest, RegisterRequest } from "../types";
 
 // 테스트 - jsonplaceholder 조회
 export const getJsonPlaceholder = async () => {
@@ -16,5 +16,17 @@ export const register = async (data: RegisterRequest) => {
 /** 로그인 */
 export const login = async (data: LoginRequest) => {
   const response = await baseInstance.post(`/login?expiresIn=10m`, data);
+  return response.data;
+};
+
+/** 프로필 조회 */
+export const getProfile = async () => {
+  const response = await baseInstance.get("/user");
+  return response.data;
+};
+
+/** 프로필 수정 */
+export const editProfile = async (data: EditProfileRequest) => {
+  const response = await baseInstance.patch("/profile", data);
   return response.data;
 };

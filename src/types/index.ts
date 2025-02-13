@@ -9,3 +9,8 @@ export type LoginRequest = {
   id: string;
   password: string;
 };
+
+export type EditProfileRequest = {
+  nickname: string;
+  avatar: string;
+};

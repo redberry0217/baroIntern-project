@@ -6,4 +6,6 @@ export const TEST_KEY = {
 // 일반 쿼리 키
 export const COMMON_QUERY_KEYS = {
   USER: ["user"],
+  PROFILE: ["profile"],
+  USER_PROFILE: (userId: string) => ["userProfile", userId],
 };
