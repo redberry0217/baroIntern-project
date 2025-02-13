@@ -29,7 +29,18 @@ const SignIn = () => {
     }
 
     // 회원가입 처리
-    signIn({ id, nickname, password });
+    signIn(
+      { id, nickname, password },
+      {
+        onSuccess: () => {
+          alert("회원가입이 완료되었습니다. 로그인 해보세요!");
+          navigate("/login");
+        },
+        onError: () => {
+          alert("회원가입에 실패했습니다. 다시 시도하세요.");
+        },
+      }
+    );
   };
 
   return (

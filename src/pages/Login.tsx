@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
 import Spacer from "../components/ui/Spacer";
@@ -8,6 +8,7 @@ import { useLogin } from "../hooks/mutations";
 const Login = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   /** hooks */
   const { mutate: login } = useLogin();
@@ -20,7 +21,18 @@ const Login = () => {
       return;
     }
 
-    login({ id, password });
+    login(
+      { id, password },
+      {
+        onSuccess: () => {
+          alert("로그인 되었습니다. 환영합니다!");
+          navigate("/");
+        },
+        onError: () => {
+          alert("로그인에 실패했습니다. 다시 시도하세요.");
+        },
+      }
+    );
   };
 
   return (
