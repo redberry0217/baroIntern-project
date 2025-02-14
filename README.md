@@ -1,51 +1,56 @@
-# React + TypeScript + Vite
+# 💙프로젝트 소개
+* REST API를 통해 회원가입,로그인 등을 간단하게 체험해 볼 수 있는 프로젝트
+* 작업 기간 : 2025.02.13(목) ~ 2.14(금) (2일간)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 💙페이지 구성
+* 메인 페이지
+* 로그인 페이지 (/login)
+* 회원가입 페이지 (/signIn)
+* 마이페이지 (/myPage) - 로그인 필요, 비로그인 시 로그인 페이지로 리다이렉트
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# 💙파일구조
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+📦src
+ ┣ 📂assets
+ ┃ ┗ 📜profile.jpg
+ ┣ 📂axios
+ ┃ ┗ 📜baseInstance.ts
+ ┣ 📂components
+ ┃ ┣ 📂layout
+ ┃ ┃ ┣ 📜AuthLayout.tsx
+ ┃ ┃ ┗ 📜Layout.tsx
+ ┃ ┣ 📂ui
+ ┃ ┃ ┣ 📂Button
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┣ 📂Input
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┃ ┗ 📂Spacer
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┗ 📜Header.tsx
+ ┣ 📂constants
+ ┃ ┗ 📜queryKeys.ts
+ ┣ 📂hooks
+ ┃ ┣ 📂mutations
+ ┃ ┃ ┗ 📜index.ts
+ ┃ ┣ 📂queries
+ ┃ ┃ ┗ 📜common.ts
+ ┃ ┗ 📜useRedirect.tsx
+ ┣ 📂pages
+ ┃ ┣ 📜Home.tsx
+ ┃ ┣ 📜Login.tsx
+ ┃ ┣ 📜MyPage.tsx
+ ┃ ┗ 📜SignIn.tsx
+ ┣ 📂services
+ ┃ ┗ 📜index.ts
+ ┣ 📂shared
+ ┃ ┗ 📜Router.tsx
+ ┣ 📂types
+ ┃ ┗ 📜index.ts
+ ┣ 📂utils
+ ┃ ┗ 📜index.ts
+ ┣ 📂zustand
+ ┣ 📜App.tsx
+ ┣ 📜global.css
+ ┣ 📜main.tsx
+ ┗ 📜vite-env.d.ts
 ```
-# baroIntern-project
