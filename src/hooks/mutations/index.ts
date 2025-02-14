@@ -28,7 +28,7 @@ export const useEditProfile = () => {
   return useMutation({
     mutationFn: editProfile,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: COMMON_QUERY_KEYS.USER });
+      queryClient.invalidateQueries({ queryKey: COMMON_QUERY_KEYS.PROFILE });
     },
   });
 };

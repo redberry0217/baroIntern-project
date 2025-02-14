@@ -21,12 +21,20 @@ export const login = async (data: LoginRequest) => {
 
 /** 프로필 조회 */
 export const getProfile = async () => {
-  const response = await baseInstance.get("/user");
+  const response = await baseInstance.get("/user", {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+    },
+  });
   return response.data;
 };
 
 /** 프로필 수정 */
 export const editProfile = async (data: EditProfileRequest) => {
-  const response = await baseInstance.patch("/profile", data);
+  const response = await baseInstance.patch("/profile", data, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+    },
+  });
   return response.data;
 };

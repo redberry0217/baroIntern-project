@@ -5,7 +5,7 @@ const Button = ({
   width,
   onClick,
 }: {
-  type: "submit" | "reset" | "button";
+  type?: "submit" | "reset" | "button";
   color: "primary" | "default";
   children: React.ReactNode;
   width?: string;
