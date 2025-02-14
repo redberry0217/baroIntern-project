@@ -12,5 +12,12 @@ export type LoginRequest = {
 
 export type EditProfileRequest = {
   nickname: string;
+  avatar: File | null;
+};
+
+export type ProfileResponse = {
+  id: string;
+  nickname: string;
   avatar: string;
+  success: boolean;
 };
