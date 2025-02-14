@@ -24,7 +24,8 @@ const Login = () => {
     login(
       { id, password },
       {
-        onSuccess: () => {
+        onSuccess: (response) => {
+          localStorage.setItem("accessToken", response.data.accessToken);
           alert("로그인 되었습니다. 환영합니다!");
           navigate("/");
         },
