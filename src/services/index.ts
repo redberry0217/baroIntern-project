@@ -1,9 +1,12 @@
+import axios from "axios";
 import { baseInstance } from "../axios/baseInstance";
 import { EditProfileRequest, LoginRequest, RegisterRequest } from "../types";
 
 // 테스트 - jsonplaceholder 조회
 export const getJsonPlaceholder = async () => {
-  const response = await baseInstance.get("/todos/1");
+  const response = await axios.get(
+    "https://jsonplaceholder.typicode.com/todos/1"
+  );
   return response.data;
 };
 
